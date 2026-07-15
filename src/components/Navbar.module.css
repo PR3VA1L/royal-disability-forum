@@ -1,0 +1,83 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1.5rem 0;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scrolled {
+  padding: 0.75rem 0;
+  background: rgba(245, 242, 237, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: 900;
+  font-size: 1.15rem;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  letter-spacing: -0.02em;
+  transition: color 0.3s;
+}
+
+.logoIcon {
+  width: 42px;
+  height: 42px;
+  background: var(--primary);
+  color: var(--accent);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.logo:hover .logoIcon {
+  transform: rotate(-10deg) scale(1.1);
+}
+
+.logoText span {
+  color: var(--accent-dark);
+}
+
+.navLinks {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.navLink {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  padding: 0.5rem 1rem;
+  border-radius: 100px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navLink:hover {
+  color: var(--primary);
+  background: rgba(13, 59, 46, 0.05);
+}
+
+.donateBtn {
+  margin-left: 1rem;
+}
+
+@media (max-width: 768px) {
+  .navLinks { display: none; }
+}
