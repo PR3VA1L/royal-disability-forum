@@ -19,7 +19,7 @@ export default function Navbar() {
       <div className={`container ${styles.navContainer}`}>
         <Link href="/" className={styles.logo}>
           <div className={styles.logoIcon} style={{ background: "transparent" }}>
-            <img src="/images/user_logo3.png" alt="Logo" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+            <img src="/images/user_logo1.png" alt="Logo" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
           </div>
           <div className={styles.logoText}>
             Royal <span>Disability</span> Forum
