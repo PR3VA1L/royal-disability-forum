@@ -24,7 +24,7 @@ export default function AdminLogin() {
   };
 
   return (
-    <div style={{ minHeight: "80vh", display: "flex", alignItems: "center", justifyContent: "center", padding: "2rem" }}>
+    <div style={{ minHeight: "80vh", display: "flex", alignItems: "center", justifyContent: "center", padding: "2rem", paddingTop: "8rem" }}>
       <motion.div 
         className="glass"
         style={{ padding: "3rem", borderRadius: "var(--radius-xl)", maxWidth: "400px", width: "100%", textAlign: "center" }}

@@ -2,7 +2,7 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { supabaseAdmin } from "@/lib/supabase";
 import { logoutAdmin } from "@/app/actions";
-import { LogOut, Mail, Users } from "lucide-react";
+import { LogOut, Mail, Users, HeartHandshake } from "lucide-react";
 
 export const dynamic = 'force-dynamic'; // Prevent static rendering so it always checks the cookie
 
@@ -28,7 +28,7 @@ export default async function AdminDashboard() {
     .order("created_at", { ascending: false });
 
   return (
-    <div style={{ backgroundColor: "#f8f9fa", minHeight: "100vh", paddingTop: "2rem", paddingBottom: "4rem" }}>
+    <div style={{ backgroundColor: "#f8f9fa", minHeight: "100vh", paddingTop: "8rem", paddingBottom: "4rem" }}>
       <div className="container">
         
         {/* Dashboard Header */}
@@ -107,6 +107,20 @@ export default async function AdminDashboard() {
           </div>
 
         </div>
+
+        {/* Donations Table (UI Only for now) */}
+        <div style={{ marginTop: "4rem", paddingTop: "3rem", borderTop: "1px solid var(--border-color)" }}>
+          <h2 style={{ fontSize: "1.5rem", color: "var(--primary)", marginBottom: "1.5rem", display: "flex", alignItems: "center", gap: "0.5rem" }}>
+            <HeartHandshake size={24} /> Recent Donations
+          </h2>
+          <div style={{ backgroundColor: "white", padding: "2rem", borderRadius: "var(--radius-lg)", border: "1px solid var(--border-color)", textAlign: "center", color: "var(--text-muted)" }}>
+            <p style={{ marginBottom: "0.5rem", fontWeight: 500, color: "var(--text-main)" }}>No automated tracking configured.</p>
+            <p style={{ fontSize: "0.9rem", maxWidth: "600px", margin: "0 auto" }}>
+              Because you are using a direct <strong>PayPal.me</strong> link, PayPal securely handles the transaction on their end but does not automatically notify this database. To see your incoming donations, please log into your PayPal dashboard directly!
+            </p>
+          </div>
+        </div>
+
       </div>
     </div>
   );

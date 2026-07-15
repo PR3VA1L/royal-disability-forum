@@ -64,9 +64,14 @@ export default function Footer() {
           <p style={{ color: "rgba(255,255,255,0.3)", fontSize: "0.85rem" }}>
             © {new Date().getFullYear()} Royal Disability Forum. All rights reserved.
           </p>
-          <p style={{ color: "rgba(255,255,255,0.3)", fontSize: "0.85rem" }}>
-            Disability is not inability.
-          </p>
+          <div style={{ display: "flex", gap: "1.5rem", alignItems: "center" }}>
+            <p style={{ color: "rgba(255,255,255,0.3)", fontSize: "0.85rem", margin: 0 }}>
+              Disability is not inability.
+            </p>
+            <Link href="/admin" style={{ color: "rgba(255,255,255,0.2)", fontSize: "0.75rem", textDecoration: "none", transition: "color 0.3s" }}>
+              Admin Login
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
