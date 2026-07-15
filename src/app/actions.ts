@@ -2,7 +2,8 @@
 
 import { z } from "zod";
 import { supabaseAdmin } from "@/lib/supabase";
-import { headers } from "next/headers";
+import { headers, cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
 // Simple in-memory rate limiting (per server instance)
 const rateLimitMap = new Map<string, number>();
@@ -137,4 +138,32 @@ export async function submitVolunteerForm(prevState: any, formData: FormData) {
     console.error("Volunteer Form Error:", error);
     return { success: false, error: "An unexpected error occurred." };
   }
+}
+
+export async function loginAdmin(prevState: any, formData: FormData) {
+  const password = formData.get("password");
+  const adminPassword = process.env.ADMIN_PASSWORD;
+
+  if (!adminPassword) {
+    console.error("ADMIN_PASSWORD not set in environment variables");
+    return { success: false, error: "Server configuration error" };
+  }
+
+  if (password === adminPassword) {
+    const cookieStore = await cookies();
+    cookieStore.set("admin_session", adminPassword, { 
+      httpOnly: true, 
+      secure: process.env.NODE_ENV === "production",
+      maxAge: 60 * 60 * 24 * 7 // 1 week
+    });
+    redirect("/admin/dashboard");
+  }
+
+  return { success: false, error: "Invalid password" };
+}
+
+export async function logoutAdmin() {
+  const cookieStore = await cookies();
+  cookieStore.delete("admin_session");
+  redirect("/admin");
 }
