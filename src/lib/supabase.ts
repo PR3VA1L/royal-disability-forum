@@ -12,8 +12,8 @@ if (!supabaseUrl || !supabaseServiceKey) {
 // IMPORTANT: We use the Service Role Key here to bypass RLS since this is a server-only client
 // NEVER expose this client to the browser/frontend components!
 export const supabaseAdmin = createClient(
-  supabaseUrl || "",
-  supabaseServiceKey || "",
+  supabaseUrl || "https://placeholder.supabase.co",
+  supabaseServiceKey || "placeholder",
   {
     auth: {
       persistSession: false,
