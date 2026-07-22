@@ -147,10 +147,10 @@ export default function HomePage() {
             Numbers That Tell Our Story
           </motion.h2>
           <div className={styles.impactGrid}>
-            <AnimatedCounter target={500} suffix="+" label="Wheelchairs Distributed" />
-            <AnimatedCounter target={120} label="Individuals Employed" />
-            <AnimatedCounter target={3} label="Shelters Established" />
-            <AnimatedCounter target={10000} suffix="+" label="Lives Impacted" />
+            <AnimatedCounter target={10} label="Wheelchairs Distributed" />
+            <AnimatedCounter target={13} label="Volunteers" />
+            <AnimatedCounter target={1} label="Shelters Established" />
+            <AnimatedCounter target={230} label="Lives Impacted" />
           </div>
         </div>
       </section>
