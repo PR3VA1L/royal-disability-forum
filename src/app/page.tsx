@@ -147,7 +147,7 @@ export default function HomePage() {
             Numbers That Tell Our Story
           </motion.h2>
           <div className={styles.impactGrid}>
-            <AnimatedCounter target={10} label="Wheelchairs Distributed" />
+            <AnimatedCounter target={150} label="Wheelchairs Distributed" />
             <AnimatedCounter target={13} label="Volunteers" />
             <AnimatedCounter target={1} label="Shelters Established" />
             <AnimatedCounter target={230} label="Lives Impacted" />
